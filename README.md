@@ -103,13 +103,50 @@ jobs:
     steps:
       - name: Build Step
         run: echo "A demo build"
-  Test:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Test Phase
         run: echo "Running test cases"
-  Deploy:
+  deploy:
     runs-on: ubuntu-latest
+    steps:
+      - name: Deploy the App
+        run: echo "Deploying the app"
+```
+
+If you observe by default multiple jobs running in parallel this is default. To run in sequential manner
+we can use **needs:{jobName}**
+ex:-
+
+```yml
+name: Hello World
+
+on: workflow_dispatch
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello step
+        run: |
+          echo "This is line one"
+          echo "This is line two"
+  build:
+    runs-on: ubuntun-latest
+    needs: hello-world
+    steps:
+      - name: Build Step
+        run: echo "A demo build"
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Test Phase
+        run: echo "Running test cases"
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: Deploy the App
         run: echo "Deploying the app"
