@@ -82,3 +82,35 @@ jobs:
           echo "This is line one"
           echo "This is line two"
 ```
+
+### Creating multiple jobs in single workflow
+
+```yml
+name: Hello World
+
+on: workflow_dispatch
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello step
+        run: |
+          echo "This is line one"
+          echo "This is line two"
+  build:
+    runs-on: ubuntun-latest
+    steps:
+      - name: Build Step
+        run: echo "A demo build"
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test Phase
+        run: echo "Running test cases"
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy the App
+        run: echo "Deploying the app"
+```
