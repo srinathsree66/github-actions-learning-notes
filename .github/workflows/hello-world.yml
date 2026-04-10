@@ -11,7 +11,7 @@ jobs:
           echo "This is line one"
           echo "This is line two"
   build:
-    runs-on: ubuntun-latest
+    runs-on: ubuntu-latest
     needs: hello-world
     steps:
       - name: Build Step

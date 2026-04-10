@@ -1,12 +1,17 @@
 # GITHUB ACTIONS
 
+## Workflow Status
+
+[![Hello World](https://github.com/srinathsree66/github-actions-learning-notes/actions/workflows/hello-world.yml/badge.svg)](https://github.com/srinathsree66/github-actions-learning-notes/actions/workflows/hello-world.yml)
+
 ## What GitHub Actions is? why it's used?
 
-A service introduced by GitHub. A service used by Devops Engineers to run the CI/CD pipelines.
+GitHub Actions is a CI/CD automation service provided by GitHub.  
+It allows developers and DevOps engineers to automate tasks such as building, testing, and deploying applications.
 
       BUILD ---> DEPLOY ----> TEST
 
-It doesn't required scripting/programming languages.
+It does not require complex scripting or programming to get started.
 
 ### CI/CD
 
