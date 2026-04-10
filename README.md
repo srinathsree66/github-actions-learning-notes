@@ -202,3 +202,44 @@ jobs:
       - name: Deploy the App
         run: echo "Deploying the app"
 ```
+
+We can trigger if we push on specific branches
+ex:-
+
+```yml
+name: Hello World
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - "release/**"
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello step
+        run: |
+          echo "This is line one"
+          echo "This is line two"
+  build:
+    runs-on: ubuntu-latest
+    needs: hello-world
+    steps:
+      - name: Build Step
+        run: echo "A demo build"
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Test Phase
+        run: echo "Running test cases"
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Deploy the App
+        run: echo "Deploying the app"
+```
