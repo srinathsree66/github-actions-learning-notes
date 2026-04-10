@@ -151,3 +151,49 @@ jobs:
       - name: Deploy the App
         run: echo "Deploying the app"
 ```
+
+### GitHub Actions Workflow Triggers & Types
+
+In GitHub actions triggers are defined by keyword **on**
+
+#### Types of Triggers
+
+      1) Event based trigger
+      2) Manual triggers
+      3) Scheduled triggers
+      4) Workflow triggers
+
+### Push & Pull Request Triggers (workflow triggers)
+
+```yml
+name: Hello World
+
+on: push
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello step
+        run: |
+          echo "This is line one"
+          echo "This is line two"
+  build:
+    runs-on: ubuntun-latest
+    needs: hello-world
+    steps:
+      - name: Build Step
+        run: echo "A demo build"
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Test Phase
+        run: echo "Running test cases"
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Deploy the App
+        run: echo "Deploying the app"
+```
