@@ -299,3 +299,7 @@ working with variables in workflows
 To create variables follow this path:-
 
 `Repository -> settings -> Secrets and variables -> Repository variables.`
+
+### Secrets
+
+To create secrets path is same as above.
