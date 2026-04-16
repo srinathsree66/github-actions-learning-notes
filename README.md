@@ -303,3 +303,10 @@ To create variables follow this path:-
 ### Secrets
 
 To create secrets path is same as above.
+
+### Actions in GitHub workflow
+
+Action is re-usable application or set of code.
+
+Actions are configurable and predefined.
+

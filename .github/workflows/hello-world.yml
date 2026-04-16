@@ -37,14 +37,27 @@
 #       - name: Deploy the App
 #         run: echo "Deploying the app"
 
-name: Hello World
+# name: Hello World
+
+# on: push
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       #   - name: Build Step
+#       #     run: echo "Hello ${{vars.MY_NAME}}"
+#       - name: Print Secrets
+#         run: echo " Docker password is ${{secrets.DOCKER_PASSWORD}}"
+
+name: GitHub Actions Demo
 
 on: push
+
 jobs:
-  build:
+  actions-demo:
     runs-on: ubuntu-latest
     steps:
-      #   - name: Build Step
-      #     run: echo "Hello ${{vars.MY_NAME}}"
-      - name: Print Secrets
-        run: echo " Docker password is ${{secrets.DOCKER_PASSWORD}}"
+      - name: Checkout the code
+        uses: actions/checkout@v4
+      - name: Print index.html content
+        run: cat index.html
