@@ -50,7 +50,6 @@
 #         run: echo " Docker password is ${{secrets.DOCKER_PASSWORD}}"
 
 name: GitHub Actions Demo
-
 on: push
 
 jobs:
