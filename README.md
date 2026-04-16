@@ -318,3 +318,9 @@ Actions are configurable and predefined.
 Create a S3 bucket and enable all traffic and static website hosting
 
 Create a new workflow file.
+
+### Environment variables
+
+An environment variable is key value pair.
+
+env variable can be configured at workflow level job level and steps level
