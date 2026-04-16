@@ -310,3 +310,11 @@ Action is re-usable application or set of code.
 
 Actions are configurable and predefined.
 
+## Deploy a static website to an S3 Bucket
+
+1. Configure S3 bucket to host a static website.
+2. Write GitHub Actions workflow to deploy to S3 bucket.
+
+Create a S3 bucket and enable all traffic and static website hosting
+
+Create a new workflow file.
