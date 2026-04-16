@@ -243,3 +243,59 @@ jobs:
       - name: Deploy the App
         run: echo "Deploying the app"
 ```
+
+If we want to trigger when **PULL REQUEST** raised we can follow this
+
+```yml
+name: Hello World
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - "release/**"
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello step
+        run: |
+          echo "This is line one"
+          echo "This is line two"
+  build:
+    runs-on: ubuntu-latest
+    needs: hello-world
+    steps:
+      - name: Build Step
+        run: echo "A demo build"
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Test Phase
+        run: echo "Running test cases"
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Deploy the App
+        run: echo "Deploying the app"
+```
+
+### Variables
+
+working with variables in workflows
+
+- Variables holds a piece of information
+- Variables are used for non sensitive data.
+
+**Secrets are used for sensistive data**
+
+To create variables follow this path:-
+
+`Repository -> settings -> Secrets and variables -> Repository variables.`
