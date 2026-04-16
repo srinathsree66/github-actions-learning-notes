@@ -46,3 +46,5 @@ jobs:
     steps:
       - name: Build Step
         run: echo "Hello ${{vars.MY_NAME}}"
+      - name: Print Secrets
+        run: echo " Docker password is ${{secrets.DOCKER_PASSWORD}}"
